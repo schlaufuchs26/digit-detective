@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Digit Detective - Guess the Missing Digits</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🔍 Digit Detective</h1>
+            <p class="subtitle">Guess the missing digits in famous numbers!</p>
+        </header>
+
+        <!-- Game Start Screen -->
+        <div id="startScreen" class="screen active">
+            <div class="start-content">
+                <h2>Welcome to Digit Detective!</h2>
+                <p>Test your knowledge of mathematical constants, famous dates, and iconic sequences.</p>
+                <div class="game-info">
+                    <div class="info-item">
+                        <span class="info-label">Total Rounds:</span>
+                        <span class="info-value">25</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Correct Answer:</span>
+                        <span class="info-value">+10 points</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Wrong Answer:</span>
+                        <span class="info-value">-1 point</span>
+                    </div>
+                    <div class="info-item">
+                        <span class="info-label">Time Pressure:</span>
+                        <span class="info-value">None - Take your time!</span>
+                    </div>
+                </div>
+                <button id="startBtn" class="btn btn-primary">Start Game</button>
+            </div>
+        </div>
+
+        <!-- Game Screen -->
+        <div id="gameScreen" class="screen">
+            <div class="game-header">
+                <div class="score-box">
+                    <span class="score-label">Score:</span>
+                    <span id="score" class="score-value">0</span>
+                </div>
+                <div class="round-info">
+                    <span id="roundNumber">Round 1 / 25</span>
+                </div>
+                <div class="streak-box">
+                    <span class="streak-label">Streak:</span>
+                    <span id="streak" class="streak-value">0</span>
+                </div>
+            </div>
+
+            <!-- Progress Bar -->
+            <div class="progress-container">
+                <div id="progressBar" class="progress-bar"></div>
+            </div>
+
+            <!-- Game Content -->
+            <div class="game-content">
+                <div id="category" class="category"></div>
+                <div id="description" class="description"></div>
+                
+                <div class="sequence-box">
+                    <div id="sequence" class="sequence"></div>
+                </div>
+
+                <div class="input-group">
+                    <label for="answerInput">Enter missing digit(s):</label>
+                    <input 
+                        type="text" 
+                        id="answerInput" 
+                        class="answer-input" 
+                        placeholder="Type here..."
+                        autocomplete="off"
+                    >
+                    <button id="submitBtn" class="btn btn-submit">Submit Answer</button>
+                </div>
+
+                <div id="feedback" class="feedback"></div>
+            </div>
+
+            <button id="skipBtn" class="btn btn-secondary">Skip Round (No penalty)</button>
+        </div>
+
+        <!-- Game Over Screen -->
+        <div id="gameOverScreen" class="screen">
+            <div class="game-over-content">
+                <h2>Game Over!</h2>
+                <div class="final-stats">
+                    <div class="stat">
+                        <span class="stat-label">Final Score:</span>
+                        <span id="finalScore" class="stat-value">0</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Correct Answers:</span>
+                        <span id="correctCount" class="stat-value">0</span> / 25
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Accuracy:</span>
+                        <span id="accuracy" class="stat-value">0</span>%
+                    </div>
+                    <div class="stat">
+                        <span class="stat-label">Best Streak:</span>
+                        <span id="bestStreak" class="stat-value">0</span>
+                    </div>
+                </div>
+
+                <div id="scoreMessage" class="score-message"></div>
+
+                <div class="results-breakdown">
+                    <h3>Results by Category:</h3>
+                    <div id="categoryResults" class="category-results"></div>
+                </div>
+
+                <button id="playAgainBtn" class="btn btn-primary">Play Again</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
